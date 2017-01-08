@@ -1,8 +1,11 @@
 package graphs.Traversal;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
     public static void main(String[] args){
-    	BFS obj = new BFS();
+    	
     	
     	Vertex v1 = new Vertex(1);
     	Vertex v2 = new Vertex(2);
@@ -11,11 +14,28 @@ public class App {
     	Vertex v5 = new Vertex(5);
     	
     	v1.addToAdjacencyList(v2);
-    	v1.addToAdjacencyList(v4);
+    	v1.addToAdjacencyList(v3);
+    	v3.addToAdjacencyList(v4);
     	v4.addToAdjacencyList(v5);
-    	v2.addToAdjacencyList(v3);
     	
-    	obj.bfs(v1);
+    	List<Vertex> list = new ArrayList<Vertex>();
+    	list.add(v1);
+    	list.add(v2);
+    	list.add(v3);
+    	list.add(v4);
+    	list.add(v5);
+    	
+    	
+        DFS obj_dfs = new DFS(list);
+        
+       //All of the following valid calls 
+//    	BFS obj_bfs = new BFS(list);
+    	
+//    	DFS obj_dfs = new DFS();
+//    	BFS obj_bfs = new BFS();
+//    	
+//    	obj_bfs.bfs(v1);
+//    	obj_dfs.dfs(v1);
     	
     }
 }
